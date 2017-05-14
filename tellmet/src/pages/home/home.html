@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      แอพ Tell Me บอกฉันทีสิ่งรอบตัว
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="!beaconData ; else beaconFound">
+    <ion-card>
+      <ion-card-header>
+        แถบแสดงร้านอาหาร
+      </ion-card-header>
+      <ion-card-content>
+        <p>กดปุ่มเริ่มต้นค้นหาร้านอาหารด้านล่างครับ</p>
+        <button ion-buttuon (click)="startScanningForBeacons()">เริ่มต้น</button>
+      </ion-card-content> 
+    </ion-card>
+  </div>
+
+  <ng-template #beaconFound>
+    <ion-card>
+      <ion-card-header>
+        ร้านขาหมูนายไบรท์
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>ขาหมูจานเล็ก 40 บาท</ion-list>
+        <ion-list>ขาหมูใหญ่ 60 บาท</ion-list>
+        <ion-list>ต้มยำกุ้งน้ำข้น 70 บาท</ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+
+  
+
+</ion-content>
